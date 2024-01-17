@@ -1,0 +1,725 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+:root{
+    --blue:#1f9b00;
+    --red:#e74c3c;
+    --orange:#f39c12;
+    --black:#333;
+    --white:#fff;
+    --light-bg:#eee;
+    --box-shadow:0 5px 10px rgba(0,0,0,.1);
+    --border:2px solid var(--black);
+    
+    --body-color:#303030;
+    --sidebar-color:#202020;
+    --primary-color:#00b50c;
+    --primary-color-light:#323232;
+    --text-color:#ffffff;
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+
+*{
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+font-family: 'Tajawal', sans-serif;
+
+}
+
+body{
+    height: 100vh;
+
+    background-color: rgb(0, 0, 0);
+
+
+}
+
+
+
+/*-------------------------- ( النافبار ) -----------------------------------------------*/
+
+/*=============== GOOGLE FONTS ===============*/
+
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 4rem;
+
+  /*========== Colors ==========*/
+  --hue: 174;
+  --sat: 63%;
+  --first-color: hsl(var(--hue), var(--sat), 40%);
+  --first-color-alt: hsl(var(--hue), var(--sat), 36%);
+  --title-color: #eaeaea;
+  --text-color: hsl(var(--hue), 8%, 35%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #212121;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Open Sans', sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+  --tiny-font-size: .625rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4.5rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section__height {
+  height: 100vh;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--container-color);
+  z-index: var(--z-fixed);
+  transition: .4s;
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.nav__logo {
+  color: var(--title-color);
+  font-weight: 600;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .nav__menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--container-color);
+    box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+    width: 100%;
+    height: 4rem;
+    padding: 0 1rem;
+    display: grid;
+    align-content: center;
+    border-radius: 1.25rem 1.25rem 0 0;
+    transition: .4s;
+  }
+}
+
+.nav__list, 
+.nav__link {
+  display: flex;
+}
+
+.nav__link {
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4px;
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+.nav__list {
+  justify-content: space-around;
+}
+
+.nav__name {
+  font-size: var(--tiny-font-size);
+  font-weight: 500;
+  /* display: none;*/ /* Minimalist design, hidden labels */
+}
+
+.nav__icon {
+  font-size: 1.5rem;
+}
+
+/*Active link*/
+.active-link {
+  position: relative;
+  color: var(--first-color);
+  transition: .3s;
+}
+
+/* Minimalist design, active link */
+/* .active-link::before{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  width: 4px;
+  height: 4px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+} */
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
+}
+
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
+/* Remove if you choose, the minimalist design */
+@media screen and (max-width: 320px) {
+  .nav__logo a{
+    text-align: center;
+  }
+  .nav__name {
+    display: none;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__list {
+    justify-content: center;
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  body {
+    margin: 0;
+  }
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem); /* 4.5rem */
+  }
+
+  .nav__icon {
+    display: none;
+  }
+  .nav__name {
+    font-size: var(--normal-font-size);
+    /* display: block; */ /* Minimalist design, visible labels */
+  }
+  .nav__link:hover {
+    color: var(--first-color);
+  }
+
+  /* First design, remove if you choose the minimalist design */
+  .active-link::before {
+    content: '';
+    position: absolute;
+    bottom: -.75rem;
+    width: 4px;
+    height: 4px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+  }
+
+  /* Minimalist design */
+  /* .active-link::before{
+      bottom: -.75rem;
+  } */
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*--------------------------- ( المذكرة ) -------------------------------------*/
+
+
+.title {
+    margin-top: 150px;
+    margin-bottom: 30px;
+    text-align: center;     
+}
+    
+    
+.title i{
+    
+    color: #fff;
+    
+    background-color: #1f9b00;
+    
+    padding: 10px 40px;
+    
+    border-radius: 50px;
+    
+    font-size: 20px;
+
+    transition: 0.7s ease;
+
+    
+}
+
+.title i:hover{
+    padding: 10px 90px;
+    border-radius: 8px;
+}
+
+.content{
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+flex-direction: column;
+
+flex-wrap: wrap;
+
+margin: 0 auto;
+
+}
+
+.card {
+  margin: 10px;
+  width: 100%;
+  max-width: 1290px;
+  height: 150px;
+  background-image: linear-gradient(135deg, #292929 1%, #0e0e0e 100%);
+  border: 2px solid #1e1e1e;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  margin-right: 25px;
+  border-radius: 10px;
+  background: linear-gradient(#d7cfcf, #9198e5);
+}
+
+.card:hover > .img {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(#9198e5, #712020);
+}
+
+.textBox {
+  width: calc(100% - 90px);
+  margin-left: 10px;
+  color: white;
+  font-family: 'Poppins' sans-serif;
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.span {
+  margin-left: 30px;
+  font-size: 15px;
+}
+
+.h1 {
+  margin-right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.h1 a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.p {
+  margin-right: 30px;
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+.elet{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.elet a{
+  text-decoration: none;
+
+  color: #fff;
+  
+  font-size: 30px;
+  
+  margin-right: 30px;
+  
+}
+
+.elet i{
+  transition: 0.3s ease;
+
+  padding: 10px 13px;
+  
+  background-color: #c00000;
+  
+  border-radius: 50px;
+  
+  margin-left: 20px;
+  
+  font-size: 16px;
+  
+  }
+
+  .elet i:hover{
+      border-radius: 10px;
+  }
+
+  .nawn{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px;
+    background-color: #1d1d1d;
+    width: 30%;
+    height: 50vh;
+    margin: 130px auto;
+    border-radius: 10px;
+    border: 2px solid #252525;
+  }
+  
+  .nawn i{
+    color: #fff;
+    font-size: 150px;
+    background-color: #111111;
+    padding: 30px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+  }
+  
+  .nawn h1{
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    
+  }
+  
+
+
+
+
+/*--------------------------- ( نهاية الصفحة ) -------------------------------------*/
+
+
+.footer {
+  flex-shrink: 0;
+    background-color: #0c0c0c;
+    color: #fff;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 26px 26px 0 0;
+    margin-top: 30%;
+      }
+
+.footer-title {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.footer-title span {
+    font-size: 1.3em;
+    color: #00bb2f;
+}
+
+.footer .social-icons{
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  
+}
+
+.footer .social-icons a{
+    font-size: 1.3em;
+    padding: 0 12px 0 0;
+    
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.7em;
+    
+}
+
+.social-icons i{
+    font-size: 30px;
+    margin: 50px 20px;
+}
+
+.contpbrr a{
+  background-color: #202020;
+  padding: 10px 30px;
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+
+/*=======================   @@@@@@@@   ============================*/
+/*=======================   @@@@@@@@   ============================*/
+/*=======================   @@@@@@@@   ============================*/
+/*=======================   @@@@@@@@   ============================*/
+
+@media (max-width:1629px){
+  
+.card {
+    max-width: 1190px;
+  }
+}
+@media (max-width:1401px){
+  
+.card {
+    max-width: 1000px;
+  }
+}
+@media (max-width:1234px){
+  
+.card {
+    max-width: 900px;
+  }
+}
+
+@media (max-width:1081px){
+  
+.card {
+    max-width: 700px;
+  }
+}
+@media (max-width:911px){
+  
+.card {
+    max-width: 500px;
+    
+  }
+}
+
+@media (max-width:540px){
+
+  .fon{
+    opacity: 1;}
+
+  .projects{
+    padding-top: 30px;
+  }
+
+  .home-section .text{
+    display: none;
+  }
+    .card {
+    max-width: 360px;
+  }
+  .img {
+    width: 50px;
+    height: 50px;}
+    .h1{
+      font-size: 20px;
+    }
+    .p{
+      font-size: 13px;
+    }
+
+    .img{
+      display: none;
+    }
+    
+    .sidebar{
+      display: none;
+    }
+
+    .h1 {
+      margin-right: -60px;
+      font-size: 29px;
+      font-weight: bold;
+    }
+
+    .p {
+      margin-right: -60px;
+      font-size: 15px;
+      font-weight: lighter;
+    }
+
+    .span{
+      display: none;
+    }
+    .card {
+  height: 100px;
+}
+
+.elet a{
+  font-size: 30px;
+  
+  margin-right: 30%;
+  
+  
+}
+
+.elet i{
+
+  padding: 10px 33px;
+
+  border-radius: 50px;
+  
+  margin-left: 20px;
+  
+  font-size: 16px;
+  
+  }
+
+  .nawn{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #1d1d1d;
+    width: 90%;
+    height: 50vh;
+    margin: 130px auto;
+    border-radius: 10px;
+    border: 2px solid #252525;
+  }
+  
+  .nawn i{
+    color: #fff;
+    font-size: 150px;
+    background-color: #111111;
+    padding: 30px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    margin-top: 60px;
+  }
+  
+  .nawn h1{
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    
+  }
+}
+
+@media (max-width:360px){
+  .card {
+    max-width: 300px;
+  }
+
+  .elet a{
+    
+    margin-right: 30%;
+    
+    
+  }
+}
+
+
+ /*===============================    نهاية الصفحة    ===============================*/ 
+ /*===============================    نهاية الصفحة    ===============================*/ 
+ /*===============================    نهاية الصفحة    ===============================*/
+
+    @media (max-width:507px){
+      .contpbrr a{
+        right: 10%;
+        padding: 10px 30px;
+        border-radius: 14px;
+        position: absolute;
+        font-size: 20px;
+      }
+
+      .footer-title{
+        width: 20%;
+      }
+          
+  } 
+  
+
+
+
+
+
+
+
+
+
+  

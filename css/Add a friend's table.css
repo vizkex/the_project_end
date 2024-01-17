@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+:root{
+    --blue:#1f9b00;
+    --red:#e74c3c;
+    --orange:#f39c12;
+    --black:#333;
+    --white:#fff;
+    --light-bg:#eee;
+    --box-shadow:0 5px 10px rgba(0,0,0,.1);
+    --border:2px solid var(--black);
+}
+
+*{
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+outline: none; border: none;
+
+text-decoration: none;
+
+font-family: 'Tajawal', sans-serif;
+
+}
+
+body{
+
+    background-color: #000000;
+}
+
+
+/*-------------------------- ( النافبار ) -----------------------------------------------*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px 90px;
+}
+
+.bor{
+    margin: 0 auto;
+    width: 50%;
+    border-bottom: 3px solid #1e1e1e;
+    border-radius: 50px;
+}
+
+header a{
+    text-decoration: none;
+}
+
+.logo{
+    color: #ffffff;
+    font-size: 46px;
+    font-weight: 700;
+}
+
+.navigation{
+    margin-left: 150px;
+}
+
+.navigation a{
+    color: #fff;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.v{
+    padding-bottom:5px;
+    border-bottom: solid 2px #00a74b;
+}
+
+.Exit{
+    background-color: #bb0000;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    transition: 0.7s ease;
+
+}
+
+.Exit:hover{
+    padding: 10px 100px ;
+}
+
+.slide{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+    width: 300px;
+    border-radius: 0 20px 20px 0;
+    margin-top: 160px;
+    border: 1px solid #9e9e9e;
+    border-left:none ;
+    position: absolute;
+    background-color: #0e0e0e;
+    transition: 0.5s ease;
+    transform: translateX(-300px);
+}
+
+.slide h1{
+    color: #ffffff;
+    text-align: right;
+    padding: 10px 0;
+    padding-right: 30px;
+    pointer-events: none;
+}
+
+ul li{
+    list-style: none;
+}
+
+.c{
+    background-color: #373737; 
+}
+
+.e{
+    background-color: #cd0000;
+}
+
+ul li a{
+    margin: 10px 10px;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+}
+
+
+
+ul li a:hover{
+    background-color: #2a2a2a; 
+}
+
+ul li a i{
+width: 40px;
+text-align: center;
+}
+
+label input{
+    display: none;
+    visibility: hidden;
+    -webkit-animation: none;
+}
+
+.toggle{
+    position: absolute;
+    height: 50px;
+    width: 60px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 10px;
+    top: 50px;
+    left: 85px;
+    background-color: #00bb16;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.toggle .common{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    transition: 0.3s ease-out;
+    
+}
+
+.toggle .tob_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.toggle .middle_line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.toggle .bottm_line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+input:checked ~ .tob_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+input:checked ~ .slide{
+    transform: translateX(0);
+}
+/*--------------------------- ( Schedule ) -------------------------------------*/
+
+.delet{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 550px 20px;
+
+}
+
+
+.delet p{
+    color: #fff;
+    font-size: 20px;
+}
+
+.delet a{
+
+    text-decoration: none;
+
+    padding: 10px 20px;
+
+    color: #fff;
+
+    font-size: 20px;
+
+    background-color: #1b1b1b;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+    
+}
+
+
+
+
+.de{
+    transition: 0.5s ease;
+}
+
+.de:hover{
+    background-color: #00bb19; 
+}
+
+
+
+
+
+/*--------------------------- ( الاحد ,الاثنين , الثلاثاء ) -------------------------------------*/
+
+
+.content-title{
+    display: flex;
+    
+    justify-content: center;
+    
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+    
+    max-width: 1900px;
+    
+    margin: 0 auto;
+
+
+    
+    }
+    
+    
+    .title{
+        
+        background-color: #059400;
+    
+        border: 1px solid rgb(0, 123, 33);
+    
+        width: 290px;
+    
+        height: 80px;
+    
+        overflow: hidden;
+    
+        border-radius: 20px;
+    
+        margin: 5px;
+    }
+    
+    
+    
+    .title-info h2{
+    padding: 20px;
+    
+    text-align: center;
+    
+    font-size: 30px;
+    
+    color: #fff;
+    }
+    
+    .title p{
+        color: #ffffff;
+        margin-right: 136px;
+        font-size: 20px;
+    
+    }
+
+/*--------------------------- ( الجدول ) -------------------------------------*/
+
+.projects{
+    margin-top: 150px;
+}
+
+
+.content{
+
+    display: flex;
+    
+    justify-content: center;
+    
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+    
+    max-width: 1900px;
+    
+    margin: 0 auto;
+    
+    }
+    
+
+    .card {
+        
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 1900px;
+        margin: 0 auto;
+        margin: 5px;
+        margin-bottom: 20px;
+        width: 290px;
+        height: 204px;
+        border-radius: 20px;
+        background-image: linear-gradient(135deg, #292929 1%, #0e0e0e 100%);
+        position: relative;
+        padding: 1.8rem;
+        border: 2px solid #333333;
+        transition: 0.5s ease-out;
+        overflow: visible;
+       }
+       
+       .card-details {
+        color: rgb(255, 255, 255);
+        height: 100%;
+        gap: .5em;
+        display: grid;
+        place-content: center;
+       }
+       
+       .card-button {
+        transform: translate(-50%, 125%);
+        width: 60%;
+        border-radius: 3rem;
+        border: none;
+        background-color: #00bb2f;
+        color: #fff;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.3s ease-out;
+       }
+
+       .card-button a{
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 800;
+       }
+       
+       .text-body {
+        color: rgb(134, 134, 134);
+       }
+       
+       /*Text*/
+       .text-title {
+        font-size: 1.5em;
+        font-weight: bold;
+       }
+       
+       /*Hover*/
+       .card:hover {
+        border-color: #00bb2f;;
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+       }
+       
+       .card:hover .card-button {
+        transform: translate(-50%, 50%);
+        opacity: 1;
+       }
+/*--------------------------- ( الجدول ) -------------------------------------*/
+
+table{
+
+    border-collapse: collapse;
+    
+    width: 100%;
+    
+    margin-bottom: 5px;
+    
+    min-height: 60vh;
+    
+    text-align: center;
+    
+    background-color: #272727;
+    
+    margin-top: 10px;
+    
+    }
+    
+    
+    
+    table,td{
+    
+    color: #fff;    
+        
+    font-size: 1.2em;
+    
+    }
+    
+    
+    .b{
+    
+    background-color: rgb(0, 169, 20);
+    
+    color: #fff;
+    
+    font-size: 1.9em;
+    }
+    
+    .bc{
+        background-color: #bbae00;
+    
+        color: #fff;
+        
+        font-size: 1.9em; 
+    }
+    
+    
+    input{
+    
+    padding: 4px;
+    
+    }
+    
+    
+    .button{
+    
+    
+        
+    border: none;
+    
+    padding: 10px 60px; 
+    
+    display: flex;
+    
+    align-items: center;
+    
+    border-radius: 30px;
+    
+    font-size: 15px;
+    
+    font-weight: 900;
+    
+    background-color: #ff0000;
+    
+    color: #ffffff;
+    
+    margin: 0 auto;
+    
+    cursor: pointer;
+    
+    
+    }
+
+
+    /*--------------------------- ( نهاية الصفحة ) -------------------------------------*/
+
+
+    .footer {
+        background-color: #0c0c0c;
+        color: #fff;
+        padding: 10em;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .footer-title {
+        font-size: 1.3em;
+        font-weight: 600;
+    }
+    
+    .footer-title span {
+        font-size: 1.3em;
+        color: #00bb2f;
+    }
+    
+    .footer .social-icons a{
+        font-size: 1.3em;
+        padding: 0 12px 0 0;
+    }
+
+    .social-icons a {
+        color: #fff;
+        font-size: 1.7em;
+        padding-right: 30px;
+    }
+
+    .social-icons i{
+        background-color: #2a2a2a;
+        padding: 20px;
+        border-radius: 16px;
+        font-size: 30px;
+    }
+
+    .pbr{
+        margin-top: 140px;
+        border: 30px solid #1d1d1d;
+    }
